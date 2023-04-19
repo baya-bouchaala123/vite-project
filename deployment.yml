@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vite-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vite-project
+  template:
+    metadata:
+      labels:
+        app: vite-project
+    spec:
+      containers:
+        - name: vite-project
+          image: docker.io/bayabouchaala/vite-project
+      imagePullSecrets:
+        - name: github-Deploy key
